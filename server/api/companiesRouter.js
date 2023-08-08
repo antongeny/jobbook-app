@@ -1,10 +1,11 @@
 const express = require("express");
 const { People, Date, Company, JobApplication } = require("../db");
+const { findByToken } = require("../db/User");
 const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    // const user = {user} = req.body
+    const user = findByToken()
 
     const companies = await Company.findAll({
       // where: { user: user},

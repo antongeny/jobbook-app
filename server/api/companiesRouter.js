@@ -13,9 +13,9 @@ const { People, Date, Company, JobApplication, User } = require("../db");
 //shows all companies
 router.get("/", async (req, res, next) => {
   try {
+    const userId = req.body;
+    console.log("userId", userId);
     if (req.headers.authorization) {
-      const userId = req.body;
-      console.log("userId", userId);
       const companies = await Company.findAll({
       where: { userId: userId.userId },
       //   include: [Date, People, JobApplication],

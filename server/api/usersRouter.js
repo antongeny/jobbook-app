@@ -1,6 +1,6 @@
 const express = require("express");
-const { User, Cart, Review } = require("../db");
 const router = express.Router();
+const { User} = require("../db");
 
 //get all users
 router.get("/", async (req, res, next) => {

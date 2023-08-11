@@ -60,15 +60,12 @@ const App = () => {
   return (
     <div>
       <div>
-        
+
         {/* <nav>
         <Navbar user={user} quantity={quantity} />
         </nav> */}
         <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           {/* <Route path="/logout" element={<Logout />} /> */}
           <Route path="/companies" element={<Companies />} />

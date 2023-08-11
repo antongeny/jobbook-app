@@ -17,9 +17,10 @@ router.get("/", async (req, res, next) => {
       const userId = req.body;
       console.log("userId", userId);
       const companies = await Company.findAll({
-        where: { userId: userId.userId },
-        //   include: [Date, People, JobApplication],
+      where: { userId: userId.userId },
+      //   include: [Date, People, JobApplication],
       });
+
       res.send(companies);
     }
     // if token, then do that

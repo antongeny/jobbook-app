@@ -7,7 +7,11 @@ const { User } = require("../db");
  */
 router.get("/", async (req, res, next) => {
   try {
-    res.send(await User.findByToken(req.headers.authorization));
+    
+    const user = await User.findByToken(req.headers.authorization);
+    
+    res.send(user);
+    // res.send(await User.findByToken(req.headers.authorization));
   } catch (error) {
     next(error);
   }

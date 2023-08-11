@@ -7,7 +7,7 @@ router.get("/", async (req, res, next) => {
         const user = {user} = req.body
 
         const people = await People.findAll({
-            where: { user: user},
+            where: { User: user},
             include: [Date, Company],
         })
 

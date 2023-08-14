@@ -21,6 +21,32 @@ router.get("/", async (req, res, next) => {
 })
 
 
+//for checking in browser
+router.get("/br", async (req, res, next) => {
+    try {
+      const people = await People.findAll({});
+  
+      res.send(people);
+    } catch (err) {
+      return res.status(501).send(err.message);
+    }
+  });
+  
+  //for checking in browser for specific user
+  router.get("/br/id", async (req, res, next) => {
+    try {
+      const userId = req.params;
+  
+      const people = await Poeple.findAll({
+        where: { userId: userId },
+      });
+  
+      res.send(companies);
+    } catch (err) {
+      return res.status(501).send(err.message);
+    }
+  });
+
 
 
 
